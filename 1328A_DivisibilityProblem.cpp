@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main () {
+	int t;
+	cin >> t;
+	int count = 0;
+	while(t--)
+	{
+		int a, b;
+
+		cin >> a >> b;
+		if (a % b == 0)
+		{
+			cout << count << "\n";
+		}
+		else
+		{
+			int c = a % b;
+			cout << b - c << "\n";
+		}
+	}
+	return 0;
+}
