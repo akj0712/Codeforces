@@ -6,7 +6,6 @@ using namespace std;
 #define FOR(a, c) for (int(a) = 0; (a) < (c); (a)++)
 #define FORL(a, b, c) for (int(a) = (b); (a) <= (c); (a)++)
 #define FORR(a, b, c) for (int(a) = (b); (a) >= (c); (a)--)
-#define fastread ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define INF 1000000000000000003
 typedef signed short int ss;		// -10⁴ (to) 10⁴
 typedef unsigned short int us;		// 00 (to) 2•10⁴
@@ -26,20 +25,34 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	string s1, s2 = "";
-	cin >> s1;
-	s2 = s2+s1[0];
-	// cout << s1.length() << "\n";
-	for (int i = 1; i < s1.length(); i = i + 2)
+	ll x, y, z;
+	cin >> x >> y >> z;
+	if (x > y)
 	{
-		s2+=s1[i];
+		swap(x, y);
 	}
-	cout << s2 << "\n";
+	if (x > z)
+	{
+		swap(x, z);
+	}
+	if (y > z)
+	{
+		swap(y, z);
+	}
+	if(y == z)
+	{
+        cout << "YES\n";
+        cout << x << " " << x << " " << z <<"\n";
+    }
+    else
+    {
+        cout << "NO\n";
+    }
 }
 
 int main()
 {
-	fastread;
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	ll T = 1;
 	cin >> T;
 	while (T--) {

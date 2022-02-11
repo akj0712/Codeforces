@@ -6,7 +6,6 @@ using namespace std;
 #define FOR(a, c) for (int(a) = 0; (a) < (c); (a)++)
 #define FORL(a, b, c) for (int(a) = (b); (a) <= (c); (a)++)
 #define FORR(a, b, c) for (int(a) = (b); (a) >= (c); (a)--)
-#define fastread ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define INF 1000000000000000003
 typedef signed short int ss;		// -10⁴ (to) 10⁴
 typedef unsigned short int us;		// 00 (to) 2•10⁴
@@ -26,22 +25,45 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	string s1, s2 = "";
-	cin >> s1;
-	s2 = s2+s1[0];
-	// cout << s1.length() << "\n";
-	for (int i = 1; i < s1.length(); i = i + 2)
-	{
-		s2+=s1[i];
+	ll n, a, b, plyr1 = 0, plyr2 = 0;
+	cin >> n;
+	while(n--){
+		cin >> a >> b;
+		if (a > b)
+		{
+			plyr1++;
+		}
+		else if (a < b)
+		{
+			plyr2++;
+		}
+		else
+		{
+			plyr1 = plyr1;
+			plyr2 = plyr2;
+		}
 	}
-	cout << s2 << "\n";
+
+	if (plyr1 == plyr2)
+	{
+		cout << "Friendship is magic!^^";
+	}
+	else if (plyr1 > plyr2)
+	{
+		cout << "Mishka";
+	}
+	else
+	{
+		cout << "Chris";
+	}
 }
+
 
 int main()
 {
-	fastread;
+	ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 	ll T = 1;
-	cin >> T;
+	// cin >> T;
 	while (T--) {
 		solve();
 	}

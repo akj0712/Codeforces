@@ -26,22 +26,16 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	string s1, s2 = "";
-	cin >> s1;
-	s2 = s2+s1[0];
-	// cout << s1.length() << "\n";
-	for (int i = 1; i < s1.length(); i = i + 2)
-	{
-		s2+=s1[i];
-	}
-	cout << s2 << "\n";
+	ll n, k, l, c, d, p, nl, np;
+	cin >> n >> k >> l >> c >> d >> p >> nl >> np;
+	cout << min(min(k * l / nl, c * d), p / np) / n << "\n";
 }
 
 int main()
 {
 	fastread;
 	ll T = 1;
-	cin >> T;
+	// cin >> T;
 	while (T--) {
 		solve();
 	}

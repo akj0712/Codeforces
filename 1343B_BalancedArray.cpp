@@ -26,15 +26,33 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	string s1, s2 = "";
-	cin >> s1;
-	s2 = s2+s1[0];
-	// cout << s1.length() << "\n";
-	for (int i = 1; i < s1.length(); i = i + 2)
+	ll n, o = 1, e = 2;
+	cin >> n;
+	int arr[n];
+	if (n % 4 != 0)
 	{
-		s2+=s1[i];
+		cout << "NO\n";
 	}
-	cout << s2 << "\n";
+	else
+	{
+		for (int i = 0; i <= (n/2)-1; i++)
+		{
+			arr[i] = e;
+			e = e + 2;
+		}
+		for (int i = (n/2); i < n-1; ++i)
+		{
+			arr[i] = o;
+			o = o + 2;
+		}
+		arr[n-1] = o+(n/2);
+		cout << "YES\n";
+		for (int i = 0; i < n; ++i)
+		{
+			cout << arr[i] << " ";
+		}
+		cout << "\n";
+	}
 }
 
 int main()

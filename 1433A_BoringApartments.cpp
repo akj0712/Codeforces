@@ -26,15 +26,12 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	string s1, s2 = "";
-	cin >> s1;
-	s2 = s2+s1[0];
-	// cout << s1.length() << "\n";
-	for (int i = 1; i < s1.length(); i = i + 2)
-	{
-		s2+=s1[i];
-	}
-	cout << s2 << "\n";
+	string s;
+	cin >> s;
+	ll digit = s[0] - '0' - 1;
+	// cout << digit << "\n";
+	ll length = s.size();
+	cout << (10*digit) + (length*(length + 1)) / 2 << "\n";
 }
 
 int main()
