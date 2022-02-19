@@ -25,27 +25,34 @@ typedef pair<int, int> pi;
 #define POB pop_back
 #define MP make_pair
 
-void solve(){
-	ll a, b, c, n;
-	cin >> a >> b >> c >> n;
-	ll sum = a + b + c + n ;
-	if (sum % 3 == 0 && a <= sum/3 && b <= sum/3 && c <= sum/3)
-	{
-		cout << "YES\n";
-	}
-	else
-	{
-		cout << "NO\n";
-	}
-}
-
 int main()
 {
 	fastread;
-	ll T = 1;
+	ll T;
 	cin >> T;
 	while (T--) {
-		solve();
+		string n;
+		cin >> n;
+		if ((n.back() - '0') % 2 == 0)
+		{
+			cout << "0\n";
+			continue;
+		}
+		if ((n[0] - '0') % 2 == 0)
+		{
+			cout << "1\n";
+			continue;
+		}
+		int count2 = count(n.begin(), n.end(), '2');
+		int count4 = count(n.begin(), n.end(), '4');
+		int count6 = count(n.begin(), n.end(), '6');
+		int count8 = count(n.begin(), n.end(), '8');
+		if (count2 > 0 || count4 > 0 || count6 > 0 || count8 > 0)
+		{
+			cout << "2\n";
+			continue;
+		}
+		cout << "-1\n";
 	}
 	return 0;
 }

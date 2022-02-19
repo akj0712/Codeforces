@@ -26,17 +26,28 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	ll a, b, c, n;
-	cin >> a >> b >> c >> n;
-	ll sum = a + b + c + n ;
-	if (sum % 3 == 0 && a <= sum/3 && b <= sum/3 && c <= sum/3)
+	ll n, count = 0;
+	cin >> n;
+	ll arr[n];
+	for (int i = 0; i < n; i++)
 	{
-		cout << "YES\n";
+		cin >> arr[i];
 	}
-	else
+	for (int i = 0; i < n; i++)
 	{
-		cout << "NO\n";
+		if (arr[i] != (i+1) && count == 0)
+		{
+			swap(arr[i], arr[i+1]);
+			count = 1;
+			break;
+
+		}
 	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
 }
 
 int main()
@@ -49,3 +60,6 @@ int main()
 	}
 	return 0;
 }
+
+
+// Wrong Answer

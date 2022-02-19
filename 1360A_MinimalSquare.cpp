@@ -26,17 +26,32 @@ typedef pair<int, int> pi;
 #define MP make_pair
 
 void solve(){
-	ll a, b, c, n;
-	cin >> a >> b >> c >> n;
-	ll sum = a + b + c + n ;
-	if (sum % 3 == 0 && a <= sum/3 && b <= sum/3 && c <= sum/3)
+	ll a, b;
+	cin >> a >> b;
+	ll c, d;
+	c = min(a, b);
+	d = max(a, b);
+	// cout << c << " " << d << "\n";
+	if (2*c >= d)
 	{
-		cout << "YES\n";
+		cout << pow(2*c, 2) << "\n";
 	}
-	else
+	else if (2*d >= c)
 	{
-		cout << "NO\n";
+		cout << pow(d, 2) << "\n";
 	}
+	else if (c == d)
+	{
+		cout << pow(2*c, 2) << "\n";
+ 	}
+ 	else if (2*c <= d)
+ 	{
+ 		cout << pow(d, 2) << "\n";
+ 	}
+ 	else if (2*d <= c)
+ 	{
+ 		cout << pow(c, 2) << "\n";
+ 	}
 }
 
 int main()
